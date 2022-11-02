@@ -9,7 +9,7 @@
     --color-white: #ffffff;
     --color-black: #000000;
     --color-blue: #91AAFF;
-    --clolr-deepblue: #7391FF;
+    --color-deepblue: #7391FF;
 
     --font-large: 48px;
     --font-medium: 28px;
@@ -108,7 +108,7 @@ p{
 }
 
 .navbar__menu__item:hover{
-    background-color: var(--clolr-deepblue);
+    background-color: var(--color-deepblue);
     border-radius: var(--size-border-radius);
 }
 
@@ -136,6 +136,7 @@ p{
 
 .home__title, .home__description {
     color: var(--color-white);
+    text-shadow: 3px 3px 1px black;
 }
 
 .home__contact {    
@@ -146,4 +147,63 @@ p{
     padding: 8px 12px;
     border: 2px solid var(--color-black);
     border-radius: var(--size-border-radius);
+}
+
+.section{
+    padding: 50px;
+    text-align: center;
+    margin: auto;
+}
+
+.section__container {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.about__majors {
+    display: flex;
+    justify-content: space-between;
+    margin: 80px 0;
+}
+
+.major__icon {
+    width: 170px;
+    height: 170px;
+    line-height: 170px;
+    font-size: 70px;
+    margin: auto;
+    color: var(--color-deepblue);
+    border: 1px solid var(--color-deepblue);
+    border-radius: 50%;
+    margin-bottom: 16px;
+}
+
+.major__icon i {
+    transform: all var(--animation-duration) ease;
+}
+
+.major__icon:hover i {
+    color: var(--color-deepblue);
+    transform: rotate(-30deg) scale(1.1);
+}
+
+.testimonial>img{
+    width: 70%;
+    height: 70%;
+}
+
+.name>a{
+    color: var(--color-black);
+}
+
+.skillset__title{
+    font-size: var(--font-large);
+}
+
+.work__projects img{
+    width: 100%;
+    height: 100%;
+    border: 3px solid black;
+    border-radius: 10px;
 }
