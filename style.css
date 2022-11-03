@@ -134,6 +134,10 @@ p{
     border-radius: 25%;
     border: 2px solid var(--color-white);
 }
+.home__avatar:hover{
+    transform: scale(1.1);
+    opacity: 0.5s;
+}
 
 .home__title, .home__description {
     color: var(--color-white);
@@ -159,7 +163,16 @@ p{
 .section__container {
     max-width: 1200px;
     margin: auto;
-    text-align: center;    
+    text-align: center;
+       
+}
+
+#skills{
+    padding-top: 0; 
+}
+
+#about{
+    padding-bottom: 0;
 }
 
 .about__majors {
@@ -224,8 +237,23 @@ p{
     font-size: var(--font-small);
 }
 
+.job>img{
+    float: left;
+    width: 20%;
+    height: 20%;
+}
+
+.job__right{
+    padding: 10px 120px 120px 120px;
+    
+}
+
 .job__period {
     font-size: var(--font-micro)
+}
+
+.about__jobs{
+    padding-left: 350px;
 }
 
 .skillset__title{
@@ -237,6 +265,7 @@ p{
     display: flex;
     border: 3px var(--color-deepblue) solid;
     margin: 20px 0;
+    box-shadow: 0px 0px 5px black;
 }
 
 .skillset__left{
@@ -258,17 +287,21 @@ p{
 .skill__description{
     display: flex;
     justify-content: space-between;
+    margin-top: 30px;
 }
 
 .skill__bar {
     width: 100%;
-    height: 3px;
+    height: 15px;
     background-color: var(--color-gray);
+    border-radius: 20px;
 }
 
 .skill__value{
-    height: 3px;
+    margin-top: 5px;
+    height: 15px;
     background-color: var(--color-blue);
+    border-radius: 20px;
 }
 
 .tools{
@@ -291,7 +324,8 @@ p{
     border-radius: var(--size-border-radius);
     font-size: var(--font-regular);
     font-weight: bold;
-    padding: 8px 48px;
+    padding: 8px 0px;
+    width: 150px;    
 }
 
 .category__btn.active, .category__btn:hover{
