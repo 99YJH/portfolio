@@ -30,7 +30,7 @@
 body{
     font-family: 'MaplestoryOTFBold',sans-serif;
     margin: 0;
-    padding-top: 80px;
+    padding-top: 60px;
 }
 
 a{
@@ -116,6 +116,7 @@ p{
     transition: opacity 300ms ease-in;
 }
 
+
 .navbar__logo{
     font-size: var(--font-medium);
     font-weight: bold;
@@ -124,6 +125,7 @@ p{
 
 .navbar__menu {
     display: flex;
+    margin:0;
 }
 
 .navbar__menu__item {
@@ -131,32 +133,34 @@ p{
     margin: 0 4px;
     color: var(--color-white);
     cursor: pointer;
+    border-radius: var(--size-border-radius);
 }
 
 .navbar__menu__item.active{
-    border: 1px solid white;
-    border-radius: var(--size-border-radius);
+    border: 1px solid var(--color-white);
 }
 
 .navbar__menu__item:hover{
     background-color: var(--color-deepblue);
-    border-radius: var(--size-border-radius);
+    border-color: var(--color-white);
 }
 
 .navbar__toggle-btn {
     position: absolute;
-    top: 24px;
-    right: 32px;
+    top: 15px;
+    right: 15px;
     font-size: 24px;
-    color: var(--color-white);
     display: none;
+    background-color: white;
+    border-radius: 5px;
+    padding-top: 4px;
 }
 
 #home{
     background: url(./images/background.png) center/cover no-repeat;
     padding: 40px;
     text-align: center;
-    padding-top: 80px;   
+    padding-top: 80px;
 }
 
 .home__avatar {
@@ -183,6 +187,10 @@ p{
     padding: 8px 12px;
     border: 2px solid var(--color-black);
     border-radius: var(--size-border-radius);
+}
+
+.home__contact:hover{
+    background-color: var(--color-blue);
 }
 
 .section{
@@ -356,15 +364,15 @@ p{
     font-size: var(--font-regular);
     font-weight: bold;
     padding: 8px 0px;
-    width: 150px;    
+    width: 150px;
 }
 
-.category__btn.active, .category__btn:hover{
+.category__btn.selected, .category__btn:hover{
     background-color: var(--color-deepblue);
     color: var(--color-white);
 }
 
-.category__btn.active .category__count,
+.category__btn.selected .category__count,
 .category__btn:hover .category__count{
     opacity: 1;
     top:0;
@@ -384,13 +392,22 @@ p{
     opacity: 0;
     transition: all var(--animation-duration) ease;
 }
-/* 
+
 .work__projects{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-} */
+}
 /* 배치 */
+
+.work__projects.anim-out{
+    opacity: 0;
+    transform: scale(0.96) translateY(40px);
+}
+
+.project.invisible{
+    display: none;
+}
 
 .project {
     position: relative;
@@ -521,6 +538,7 @@ img.testimonial__avatar {
 @media screen and (max-width:768px) {
     .navbar__toggle-btn {
         display: block;
+        
     }
 
     #navbar {
@@ -531,8 +549,12 @@ img.testimonial__avatar {
     .navbar__menu {
         flex-direction: column;
         text-align: center;
-        width: 100%;
+         width: 100%;
         display: none;
+    }
+
+    .navbar__menu.open{
+        display:block;
     }
 
     .about__majors {
